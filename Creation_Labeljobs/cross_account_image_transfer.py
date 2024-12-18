@@ -5,7 +5,7 @@ from aws_utils import (get_aws_session,
                        get_json_contents_from_aws,
                        get_s3_client,
                        read_image_from_s3,
-                       transfer_to_kili_intra_account,
+                       transfer_to_labeltool_intra_account,
                        upload_image_to_s3)
 
 
@@ -44,7 +44,7 @@ def main():
                     source_bucket_name = image_content_split[2].split(".")[0]
                     if "int" in source_bucket_name:
                         print(project, image_name, source_bucket_name)
-                        transfer_to_kili_intra_account(source_bucket=source_bucket_name,
+                        transfer_to_labeltool_intra_account(source_bucket=source_bucket_name,
                                                     destination_bucket=DESTINATION_BUCKET,
                                                     subdirectory_path=project,
                                                     file_to_transfer=image_name,
