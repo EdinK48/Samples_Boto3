@@ -117,7 +117,7 @@ def read_image_from_s3(bucket_name: str,
     image = Image.open(buffer)
     return image
 
-def transfer_to_kili_intra_account(
+def transfer_to_labeltool_intra_account(
     source_bucket: str,
     destination_bucket: str,
     subdirectory_path=str,
